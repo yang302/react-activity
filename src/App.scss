@@ -1,0 +1,127 @@
+@import 'static/css/mixin.scss';
+
+.tabContainer {
+	>ul {
+		height: rem(85px);
+		line-height: rem(85px);
+		display: flex;
+		background: #fff;
+		li {
+			flex: 1;
+			text-align: center;
+			font-size: rem(28px);
+			color: #999;
+			border: 1px solid #e6e6e6;
+			
+			&:nth-child(1) {
+				border-left: none;
+			}
+			&:nth-child(2) {
+				border-left: none;
+				border-right: none;
+			}
+			&.react-tabs__tab--selected {
+				color: #fd7753;
+				border-bottom-color: #fc6047;
+				border-bottom-width: rem(4px);
+				transition: border-bottom-color 0.4s, color 0.4s;
+			}
+		}
+	}
+	.waiting {
+		margin-top: rem(245px);
+		text-align: center;
+		img {
+			width: rem(198px);
+			height: rem(203px);
+		}
+		p {
+			color: #999999;
+			font-size: rem(28px);
+			margin-top: rem(5px);
+			span {
+				font-size: rem(40px);
+				font-weight: 700;
+				margin-left: rem(2px);
+			}
+		}
+	}
+	.listWrapper {
+		&:last-child {
+			margin-bottom: rem(35px);
+		}
+		li {
+			position: relative;
+			background: #fff;
+			padding: rem(20px) rem(20px) rem(25px);
+			margin: rem(25px) rem(25px) 0;
+			border-radius: rem(10px);
+			border: 1px solid #dddddd;
+			
+			.imgContainer {
+				width: 100%;
+				height: rem(220px);
+				background: #e5e5e5;
+				img {
+					width: 100%;
+					height: rem(220px);
+				}
+				.stick {
+					position: absolute;
+					right: 0;
+					top: rem(30px);
+					color: #fff;
+					padding: rem(4px) rem(6px);
+					background: orange;
+					font-size: rem(24px);
+				}
+			}
+		}
+		.time {
+			font-size: rem(24px);
+			color: #999999;
+			.startTime, .endTime {
+				margin-top: rem(48px);
+			}
+			.startTime {
+				margin-right: rem(2px);
+			}
+			.endTime {
+				margin-left: rem(2px);
+			}
+		}	
+	}
+}
+
+.btnWrapper {
+	display: inline-block;
+	padding: rem(13px) rem(36px);
+	color: #fff;
+	font-size: rem(28px);
+	border-radius: rem(50px);
+	margin-top: rem(25px);
+}
+
+.loginWrapper {
+	margin-top: rem(72px);
+	text-align: center;
+		img {
+		width: rem(225px);
+		height: rem(126px);
+	}
+	.view {
+		margin: rem(90px) 0 rem(35px) 0;
+		color: #434343;
+		font-size: rem(28px);
+	}
+	.loginBtn {
+		margin: 0 auto rem(50px) auto;
+		font-size: rem(32px);
+		width: rem(690px);
+		height: rem(90px);
+		line-height: rem(90px);
+		background: #fc6047;
+		color: #fff; 
+		border-radius: rem(10px);
+	}
+}

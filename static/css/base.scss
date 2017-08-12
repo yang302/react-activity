@@ -1,0 +1,45 @@
+body {
+    background: #f7f6f9;
+    * {
+        box-sizing: border-box;
+    }
+}
+
+html,
+body {
+    -webkit-tap-highlight-color: transparent;
+}
+
+input {
+    outline: none;
+    -webkit-appearance: none;
+}
+
+span, i {
+    display: inline-block;
+}
+
+i {
+    font-style: normal;
+}
+
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clearfix:after {
+    display: table;
+    content: '';
+    clear: both;
+}
+
+#root {
+    max-width: rem(1200px);
+    margin: 0 auto;
+    overflow-x: hidden;
+}
