@@ -22,10 +22,8 @@ class ListItem extends PureComponent {
 
   render() {
     const data = this.props.data;
-    return (
-      <div className='listWrapper'>
-        <ul className='clearfix'> 
-          {data.map((item ,index) => {
+
+    const list = data.length ? data.map((item ,index) => {
             return (
             <li key={index}>
               <div className='imgContainer'>{item.stick == '1' ? <span className='stick'>置顶</span> : ''}<LazyLoad height={200} offset={400}><a href={item.imgLink}><img src={item.imgUrl} alt=''/></a></LazyLoad></div>
@@ -37,7 +35,12 @@ class ListItem extends PureComponent {
                 </span>
               </p>
             </li>)
-          })}
+          }) : '';
+
+    return (
+      <div className='listWrapper'>
+        <ul className='clearfix'> 
+          {list}
         </ul>
       </div>
     )

@@ -1,6 +1,12 @@
 @import 'static/css/mixin.scss';
 
 .tabContainer {
+	.loading {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+	}
 	>ul {
 		height: rem(85px);
 		line-height: rem(85px);

@@ -27,6 +27,7 @@ class App extends PureComponent {
     super(props);
 
     this.state = {
+      dataNone: false,
       hasLogin: false,
       tabIndex: 0,
       currentDate: '',
@@ -61,6 +62,11 @@ class App extends PureComponent {
     }).then(json => {
       const allList = json.data.allList;
       const myList = json.data.myList;
+
+      if(!allList.length || !allList) {
+        this.setState({dataNone: true});
+      }
+
       const allData = this.sortData(allList, json.currentDate);
       const myData = this.sortData(myList, json.currentDate);
 
@@ -83,7 +89,8 @@ class App extends PureComponent {
   render() {
     const allData = this.state.allList;
     const myData = this.state.myList;
-    const allListItem = allData.length ? <ListItem currentDate={this.state.currentDate} data={allData}/> : <div className='waiting'><img src={NoneIcon}/><p>暂无， 敬请期待<span>~</span></p></div>;
+
+    const allListItem = allData.length ? <ListItem currentDate={this.state.currentDate} data={allData}/> : (this.state.dataNone ? '' : <div className='loading'>加载中......</div>);
     const myListItem = myData.length ? <ListItem currentDate={this.state.currentDate} data={myData}/> : <div className='waiting'><img src={NoneIcon}/><p>暂无， 快去看看感兴趣的活动吧<span>~</span></p></div>;
 
     return (
@@ -94,6 +101,9 @@ class App extends PureComponent {
         </TabList>
 
         <TabPanel>
+        {
+          this.state.dataNone ? <div className='waiting'><img src={NoneIcon}/><p>暂无， 敬请期待<span>~</span></p></div> : ''
+        }
           {allListItem}
         </TabPanel>
         <TabPanel>
